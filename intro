@@ -1,3 +1,4 @@
+Authentication
 authentication: verifying identity (401 Unauthorized) 
             භාවිතා කරන්නාව (අනන්‍යතාව)හදුනා ගැනීම.
 authorization: verifying permissions(403 Forbidden)
@@ -6,3 +7,20 @@ Username/password scheme
 මෙහිදී දක්වෙනුවේ අනන්‍යතාව ගබඩා කරගන්නා ආකාර පිළිබඳවයි. 
 stateful (i.e. session using a cookie)
 stateless (i.e token using JWT/OAuth /Other)
+
+Sessions එකකදී සිදුවන ක්‍රියාදාමය 
+Flow
+*user submit login credentials , e.g email & password.
+ භාවිතා කරන්නා අනන්‍යතාව තහවුරු කිරීමට නාමය සහ මුරපදය ඇතුළු කරයි.
+*server verifies the credentials against the DB.
+ පරිශීලකයාගේ අනන්‍යතාව server හි දත්ත ගබඩාව සමග ගලපයි.
+*server creates a temporary user session.
+ ගැලපීම සිදුවුවහොත් server මගින් තාවකාලික session එකක් නිර්මාණය කරයි.
+*server issues a cookie with session ID.
+ server මගින් නිර්මාණය කල session එක cookie එකක් ලෙස නිකුත් කර පරිශීලකයාගේ ගබඩා කරයි.
+*user sends the cookie with each request.
+ පරිශීලකයා server එකට එවන සෑම request එකක් සමග cookie ගොණුව සහසම්බන්ද වේ.
+*server validates it against the session store & grants access.
+ server මගින් cookie ගොණුව පිරික්සා අනන්‍යතාව තහවුරු කරගෙන පරිශීලකයාට අවශ්‍ය ප්‍රවේශ ලබා දේ.
+*when user logs out ,server destroys the sess & clear the cookie.
+ පරිශීලකයා logs out වූ විට server එකෙහි ගබඩා වී තුබූ session එක විනාශ වේ. එය පරිශීලකයාගේ cookie එකක් දැනුවත් විය යුතුය.
