@@ -1,0 +1,8 @@
+authentication: verifying identity (401 Unauthorized) 
+            භාවිතා කරන්නාව (අනන්‍යතාව)හදුනා ගැනීම.
+authorization: verifying permissions(403 Forbidden)
+            භාවිතා කරන්නාට අදාල ස්ථානයට ප්‍රවේශයට අවසර ඇද්දැයි පරීකෂා කිරීම.
+Username/password scheme 
+මෙහිදී දක්වෙනුවේ අනන්‍යතාව ගබඩා කරගන්නා ආකාර පිළිබඳවයි. 
+stateful (i.e. session using a cookie)
+stateless (i.e token using JWT/OAuth /Other)
